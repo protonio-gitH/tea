@@ -15,6 +15,31 @@
             display: flex;
             align-items: center;
             gap: 0 65px;
+            font-weight: 400;
+            font-size: 18px;
+            margin-left: 85px;
+            position: relative;
+            z-index: 3;
+        }
+        &__btn{
+            display: none;
+            width: 40px;
+            height: 19px;
+            z-index: 2;
+            position: relative;
+            
+        }
+
+    
+
+        &__btn span{
+            background-color: #000;
+            height: 2px;
+            width: 100%;
+        }
+
+        &__close{
+            display: none;
         }
     }
 
@@ -26,5 +51,193 @@
 
     .user-actions__item:last-child{
         margin-left: 80px;
+    }
+
+    
+    .mobile-nav{
+        display: none;
+    }
+}
+
+.menu--close{
+    display: none; 
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,.5);
+    z-index: 1;
+    transition: background-color .3s ease;
+}
+
+.menu--close.menu--open{
+    display: block;
+
+}
+
+
+@media (max-width:1000px){
+    .header{
+        &__inner{
+            min-width: auto;
+        }
+
+        .user-actions__item:last-child{
+            margin-left: 30px ;
+        }
+
+        .menu{
+            margin-right: auto;
+            &__list{
+                margin-left: 60px;
+            }
+        }
+        .logo{
+            margin-bottom: 0;
+        }
+    }
+}
+
+@media (max-width:860px){
+    .header{
+        .menu{
+            order: -1;
+            margin-right: 0 ;
+            &__list{
+                // display: none;
+                transform: translateY(-100%);
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                width: 480px;
+                margin: 0 auto;
+                background-color: #fff;
+                display: block;
+                text-align: center;
+                padding-top: 60px;
+                transition: transform .5s ease-in;
+
+
+                &--active{
+                    transform: translateY(0);
+                }
+                
+            }
+
+            &__btn{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+            }
+
+            
+
+            &__close{
+                display: block;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+            }
+
+            &__item{
+                margin-bottom: 30px;
+                font-size: 24px;
+                font-family: 'Cormorant', serif;
+            }
+
+            .mobile-actions{
+                background-color: #F7F2EA;
+                height: 60px;
+                padding: 0 80px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .mobile-nav{
+                display: block;
+            }
+
+            .mobile-menu{
+                
+                padding-top: 60px;
+                margin: 60px 30px;
+                border-top: 2px solid #F7F2EA;
+
+                &__item{
+                    margin-bottom: 35px;
+                    font-size: 13px;
+                    font-weight: 300;
+                    color: #000;
+                    line-height: normal;
+                }
+            }
+        }
+
+        
+
+        .logo{
+            margin-left: auto;
+            margin-right: 154px;
+        }
+    }
+}
+
+@media (max-width:768px){
+    .header{
+        &__inner{
+            padding-left: 64px;
+            padding-right: 64px;
+        }
+    }
+    
+}
+
+@media (max-width:680px){
+    .header{
+
+        &__inner{
+            padding-left: 0;
+            padding-right: 0 ;
+        }
+    }
+}
+
+@media (max-width:480px){
+    .header{
+
+        .menu{
+            &__list{
+                width: 360px;
+            }
+        }
+
+
+        .logo{
+            margin-right: 80px;
+
+            img{
+                width: 39px;
+            }
+        }
+    }
+}
+@media (max-width:360px){
+    .header{
+
+        &__inner{
+            padding: 10px 0;
+        }
+
+        .logo{
+            margin-right: 50px;
+        }
+
+        .user-actions__item:last-child{
+            margin-left: 0;
+        }
     }
 }
