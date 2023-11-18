@@ -1,0 +1,165 @@
+.mailing-list{
+    padding: 100px 0;
+    background-color: #F7F2EA;
+    background-image: url(../img/mailing-bg.png);
+    background-repeat: no-repeat;
+    background-position: bottom right;
+
+    &__title{
+        text-align: left;
+        margin-bottom: 50px;
+    }
+
+    &__inner{
+        display: flex;
+        gap: 60px 40px;
+        line-height: 1.5;
+    }
+
+    &__form{
+        display: flex;
+        flex-wrap: wrap;
+        flex-basis: 580px;
+    }
+
+    &__text{
+        flex-basis: 580px;
+    }
+
+    &__email{
+        border: none;
+        border-bottom:1px solid #B8B58B;
+        background-color: transparent;
+        padding: 3px 15px;
+        width: 424px;
+        margin-right: 25px;
+
+        color: #151618;
+        line-height: 1.5;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 300;
+        font-size: 20px;
+    }
+    &__email::placeholder{
+        color: #B8B58B;
+        line-height: 1.5;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 300;
+        font-size: 20px;
+    }
+
+    &__btn{
+        background-color: #fff;
+        border: 1px solid #151618;
+        padding: 12px 41px;
+        font-size: 20px;
+        font-weight: 300;
+        cursor: pointer;
+        font-family: 'Open Sans', sans-serif;
+    }
+
+    .checkbox__text{
+        font-size: 13px;
+        padding-left: 20px;
+       
+    }
+
+    .checkbox{
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        clip: rect(0,0,0,0);
+        padding-left: 20px;
+    }
+
+    .checkbox-style{
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border: 1px solid #151618;
+        margin-top: 5px;
+    }
+
+    &__label{
+        margin-top: 16px;
+    }
+
+    .checkbox:checked + .checkbox-style::before{
+        content: '';
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        background-color: #151618;
+        top: 1px;
+        left: 1px;
+        
+    }
+
+}
+
+@media (max-width:1000px){
+    .mailing-list{
+        padding: 60px 0;
+        &__inner{
+            flex-wrap: wrap;
+            justify-content: center;
+            
+        }
+
+        &__title{
+            text-align: center;
+            
+        }
+
+        &__text{
+            text-align: center;
+            flex-basis: 780px;
+        }
+    }
+}
+
+@media (max-width:768px){
+    .mailing-list{
+        padding: 60px 0;
+        
+        &__text{
+            flex-basis: 640px;
+        }
+
+        &__list{
+            gap: 30px 130px;
+        }
+    }
+}
+
+@media (max-width:480px){
+    .mailing-list{
+        padding: 50px 0;
+        
+        &__text{
+            flex-basis: 100%;
+            font-size: 13px;
+        }
+
+        &__inner{
+            gap: 30px 0;
+        }
+
+        &__email{
+            width: 306px;
+            margin-right: 20px;
+        }
+    }
+}
+
+
+@media (max-width:360px){
+    .mailing-list{
+        padding: 50px 0;
+
+        &__email{
+            width:185px;
+            
+        }
+    }
+}
